@@ -1,0 +1,11 @@
+# amazon-dash.yml
+# See https://pypi.python.org/pypi/amazon-dash/0.1.3
+# sudo pip install amazon-dash 
+# ---------------
+settings:
+  delay: 10
+devices:
+  50:f5:da:3e:02:36
+  name:
+  user:
+  cmd:
