@@ -22,7 +22,7 @@ def button_pressed_dash():
     print 'Dash button ' + dash_mac_address + ' pressed at ' + current_time
     # Action
     print 'Action is: wakeonlan ' + wol_mac_address
-    call(["sudo", "wakeonlan", wol_mac_address])
+    call(["sudo", "python ./wakeonlan.py", wol_mac_address])
   lastpress = thistime
 
 def udp_filter(pkt):
