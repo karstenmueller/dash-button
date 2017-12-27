@@ -5,9 +5,9 @@ import datetime
 from subprocess import call
 
 # Constants
-timespan_threshhold = 3
+timespan_threshhold = 2
 dash_mac_address = '50:f5:da:3e:02:36'
-dash_url_action = 'http://www.google.de/'
+wol_mac_address = 'F4:4D:30:18:55:46'
 
 # Globals
 lastpress = datetime.datetime.now()
@@ -21,9 +21,8 @@ def button_pressed_dash():
     current_time = datetime.datetime.strftime(thistime, '%Y-%m-%d %H:%M:%S')
     print 'Dash button ' + dash_mac_address + ' pressed at ' + current_time
     # Action
-    response = urllib2.urlopen(dash_url_action)
-    html = response.read()
-    print 'Result is: ' + html
+    print 'Action is: wakeonlan ' + wol_mac_address
+    call(["sudo", "wakeonlan", wol_mac_address])
   lastpress = thistime
 
 def udp_filter(pkt):
